@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" role="img" aria-label="Bright Future School crest">
+  <path d="M60 5 108 23v44c0 33-22 54-48 68C34 121 12 100 12 67V23Z" fill="#102f55" stroke="#d9aa46" stroke-width="4"/>
+  <path d="M60 14 99 29v38c0 27-18 46-39 58-21-12-39-31-39-58V29Z" fill="none" stroke="#d9aa46" stroke-width="1"/>
+  <circle cx="60" cy="43" r="12" fill="#e4b64f"/>
+  <path d="M60 23v-4M41 28l-3-3M79 28l3-3M37 43h-4M83 43h4" stroke="#e4b64f" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M31 55q15-5 29 4 14-9 29-4v29q-15-4-29 4-14-8-29-4Z" fill="#fff" stroke="#d9aa46" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M60 60v26M37 63q9-1 17 3M37 70q9-1 17 3M37 77q9-1 17 3M66 66q8-4 17-3M66 73q8-4 17-3M66 80q8-4 17-3" stroke="#8ca1b8" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="m44 94 16 5 16-5" fill="none" stroke="#d9aa46" stroke-width="2"/>
+  <text x="60" y="116" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#e4b64f">BFS</text>
+</svg>

@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@theme { --color-navy: #102f55; --color-gold: #d9aa46; --font-sans: "Segoe UI", Arial, sans-serif; }
+@layer base {
+  body { @apply m-0 bg-slate-50 font-sans text-base text-slate-700 antialiased; }
+  button, select { @apply cursor-pointer; }
+  button:disabled { @apply cursor-not-allowed opacity-50; }
+  :focus-visible { @apply outline-2 outline-offset-4 outline-blue-500; }
+  input, select, textarea { @apply min-w-0 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-base text-slate-800; }
+  input:focus, select:focus, textarea:focus { @apply border-blue-400; }
+  input::placeholder { @apply text-slate-400; }
+  label { @apply block text-sm font-semibold text-slate-600; }
+  fieldset { @apply min-w-0; }
+}
+@layer components {
+  .school-card { @apply min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm; }
+  .btn { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-navy px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-900; }
+  .btn-light { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-blue-300 hover:bg-blue-50; }
+  .icon-btn { @apply inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-slate-500 hover:bg-blue-50 hover:text-navy; }
+  .school-table { @apply w-full border-collapse text-left text-sm; }
+  .school-table th { @apply whitespace-nowrap border-y border-slate-200 bg-slate-50 px-5 py-3 text-xs font-bold uppercase tracking-wide text-slate-500; }
+  .school-table td { @apply border-b border-slate-100 px-5 py-3.5; }
+  .school-table tbody tr:last-child td { @apply border-b-0; }
+  .school-table tbody tr:hover { @apply bg-slate-50/80; }
+  .school-modal { @apply m-auto w-[min(680px,calc(100vw-32px))] max-h-[calc(100dvh-40px)] overflow-y-auto rounded-2xl border border-slate-200 bg-white p-6 text-slate-700 shadow-2xl; }
+  .school-modal::backdrop { background: #0a1c36aa; backdrop-filter: blur(3px); }
+  .form-label input, .form-label select, .form-label textarea { @apply mt-2 w-full; }
+  .chart-area { @apply h-72 px-4 pb-4; }
+  .report-sheet { @apply mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10; }
+  .report-table { @apply w-full border-collapse text-left; }
+  .report-table th { @apply border-y-2 border-navy bg-blue-50 px-4 py-3 text-sm font-bold text-navy; }
+  .report-table td { @apply border-b border-slate-200 px-4 py-3 text-sm; }
+  .results-input { @apply w-20 rounded-lg px-2 py-2 text-center font-semibold; }
+  .save-bar { @apply sticky bottom-4 z-10 mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-blue-200 bg-blue-50 px-5 py-4 shadow-sm; }
+}
+.recharts-wrapper:focus, .recharts-surface:focus { outline: none; }
+.chart-area .recharts-text { font-size: 12px; }
+.school-sidebar { transition: transform 180ms ease; }
+.presentation-view .school-sidebar { display: none; }
+.presentation-view .school-main { margin-left: 0; }
+.report-print-footer { display: none; }
+@media (max-width: 640px) { .chart-area { height: 260px; padding-right: 8px; padding-left: 4px; }.report-table th, .report-table td { padding: 10px 8px; font-size: 12px; } }
+@media print {
+  @page { size: A4; margin: 12mm; }
+  body { background: white; color: #172b46; }
+  .school-sidebar, .school-header, .page-heading, .workspace-filters, .app-foot, .no-print, .school-modal, .toast-message { display: none !important; }
+  .school-main { margin-left: 0 !important; min-height: 0 !important; }
+  .school-content { max-width: none; padding: 0 !important; }
+  .report-sheet { padding: 0; max-width: none; box-shadow: none; border: 0; border-radius: 0; }
+  .report-sheet > header { padding-bottom: 16px; }
+  .report-sheet > header img { height: 64px; width: 58px; }
+  .report-sheet > header + div { margin: 16px 0; }
+  .report-table th, .report-table td { padding: 10px 12px; }
+  .report-summary { margin: 16px 0; padding: 16px; }
+  .report-signatures { margin-top: 24px; }
+  .report-sheet > header, .report-summary, .report-comment, .report-signatures, .report-table tr { break-inside: avoid; }
+  .report-print-footer { display: block; margin-top: 12px; font-size: 10px; text-align: center; }
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }

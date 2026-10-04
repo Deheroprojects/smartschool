@@ -1,0 +1,11 @@
+.venv
+node_modules
+dist
+data
+.qa
+.npm-cache
+.git
+__pycache__
+test-results
+playwright-report
+*.tsbuildinfo
